@@ -1,0 +1,112 @@
+<style>
+//#northHand {                    !!!!!What's up with that???
+//    background-color:black;     !!!!!When I took out these lines
+//    color:white;                !!!!!the first style stopped working
+//    text-align:center;          !!!!!which is the problem I had with
+//    padding:5px;                !!!!!these lines in the first place!!??!!
+//}
+
+#dummyNorth {
+    height:80px;
+    width:550px;
+    float:left;
+}
+
+#northHand {
+    padding:42;
+    line-height:30px;
+    background-color:lightyellow;
+    color:red;
+    //text-align:center;
+    height:80px;
+    width:500px;
+    float:left;
+}
+
+#westHand {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:320px;
+    width:500px;
+    float:left;
+    clear:both
+}
+
+#cardPile {
+    line-height:30px;
+    width:600px;
+    height:320px;
+    background-color:lightgreen;
+    float:left;
+    //padding:100px; 
+}
+
+.card {
+	width:45px;
+	height:60px;
+	border-color:black;
+	border-width:1px;
+	border-style:solid;
+}
+
+	#northCard {
+		text-align:center;
+	}
+	
+	#westCard {
+		text-align:left;
+	}
+	
+	#eastCard {
+		text-align:right;
+	}
+	
+	#southCard {
+		text-align:center;
+	}
+
+#eastHand {
+    line-height:30px;
+    width:500px;
+    height:320px;
+    background-color:lightblue;
+    float:left;
+    //padding:100px;
+}
+
+#dummySouth {
+    height:80px;
+    width:550px;
+    float:left;
+    clear:both;
+}
+
+#southHand {
+    line-height:30px;
+    width:500px;
+    height:80px;
+    background-color:pink;
+    float:left;
+    //padding:100px;
+    //clear:both;
+    //text-align:center;
+}
+
+#dummyMessages {
+    height:60px;
+    width:300px;
+    float:left;
+    clear:both;
+}
+
+#messages {
+    background-color:black;
+    color:white;
+    //clear:both;
+    text-align:center;
+    line-height:20px;
+    width:1000px;
+    height:60px;
+    float:left; 
+}
+</style>

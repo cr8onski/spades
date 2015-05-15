@@ -1,0 +1,77 @@
+<!-- This is my html area for trying to figure out using js and such and forth -->
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+  <title>&spades; Spades &spades;</title>
+  <link rel="stylesheet" href="cardTable.css">
+  <script type="text/javascript" src="../js/spadesMain.js"></script>
+
+</head>
+
+<body>
+<!--
+  <div id="northHand">
+    North Hand
+  </div>
+  -->
+  
+  <div id="dummyNorth"></div>
+  
+  <div id="northHand">
+    North Hand
+  </div>
+  
+  <br>
+  
+  <div id="westHand">
+    West Hand
+  </div>
+  
+  <div id="cardPile">
+    Card Pile
+    <p id="cardPileP">
+      <button type="button" onclick="spadesMain()">Start Game!!</button>
+    </p>
+	<p id="cardPileNextP">
+	  <button type="button" onclick="window.close()">Quit</button>
+	</p>
+	<p id="northCard" class="card"></p>
+	<p id="westCard" class="card"></p>
+	<p id="eastCard" class="card"></p>
+	<p id="southCard" class="card"></p>
+  </div>
+  
+  <div id="eastHand">
+    East Hand
+  </div>
+  
+  <br>
+  
+  <div id="dummySouth"></div>
+  
+  <div id="southHand">
+    South Hand
+  </div>
+  
+  <br>
+  
+  <div id="dummyMessages"></div>
+  
+  <div id="messages">
+    Messages
+  </div>
+  
+<!--  <script>
+    function startGame () {
+      document.getElementById("southHand").innerHTML = "Me!!";
+	  document.getElementById("cardPileP").innerHTML = "Whoo-Hoo!! Let's play."
+    }
+  </script> -->
+
+</body>
+
+</html>
