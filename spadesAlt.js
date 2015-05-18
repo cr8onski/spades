@@ -105,11 +105,85 @@ function spadesMain () {
 		var value = getValue(num);
 	}
 	
+	//Provides a shorthand display for a given hand of cards
+	//consists of the value followed by the symbol of the suit
+	function showCards (hand) {
+		for (i = 0; i < hand.length; i++) {
+			suit = getSuit(hand[i]);
+			value = getValue(hand[i]);
+			switch (value) {
+				case 0:
+					str += "2";
+					break;
+				case 1:
+					str += "3";
+					break;
+				case 2:
+					str += "4";
+					break;
+				case 3:
+					str += "5";
+					break;
+				case 4:
+					str += "6";
+					break;
+				case 5:
+					str += "7";
+					break;
+				case 6:
+					str += "8";
+					break;
+				case 7:
+					str += "9";
+					break;
+				case 8:
+					str += "10";
+					break;
+				case 9:
+					str += "J";
+					break;
+				case 10:
+					str += "Q";
+					break;
+				case 11:
+					str += "K";
+					break;
+				case 12:
+					str += "A";
+					break;
+				default:
+					str += "err"
+			}  //Value switch
+			str += " of ";
+			switch (suit) {
+				case 0:
+					str += "&spades;"
+					break;
+				case 1:
+					str += "&clubs;"
+					break;
+				case 2:
+					str += "&hearts;"
+					break;
+				case 3:
+					str += "&diamonds;"
+					break;
+				default:
+					str += "there appears to have been some type of error";
+			}  //Suit switch
+		}
+	}  //End of showCards function
+	
+	//Provides the long name() of a given hand of cards
 	function nameCards (hand) {
 		for (i = 0; i < hand.length; i++) {
 			suit = getSuit(hand[i]);
 			value = getValue(hand[i]);
-			str = "";
+			if (i = 0) {
+				str = "";
+			} else {
+				str += ", "
+			}
 			switch (value) {
 				case 0:
 					str += "Two";
@@ -171,7 +245,8 @@ function spadesMain () {
 					str += "there appears to have been some type of error";
 			}  //Suit switch
 		}  //hand for loop
-	}
+		return str;
+	}  //End of nameCards function
 	
 	//Control variable for the main do/while loop
 	//set as true to begin and changed to false when the player selects to 
