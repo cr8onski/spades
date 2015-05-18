@@ -20,93 +20,96 @@ function spadesMain () {
     //clear buttons
     document.getElementById("cardPileP").innerHTML = "";
     document.getElementById("cardPileNextP").innerHTML = "";
-//  we make four players
-//  player constructor
-function player (name, seat) {
-    this.name = name;
-    this.seat = seat%4;
-    this.hand = [];
-    this.spades = [];
-    this.clubs = [];
-    this.hearts = [];
-    this.diamonds = [];
-    this.deal = false;
-    this.lead = false;
-    this.score = 0;
-    this.bid = 0;
-    this.books = 0;
-}
+	//  we make four players
+	//  player constructor
+	function player (name, seat) {
+		this.name = name;
+		this.seat = seat%4;
+		this.hand = [];
+		this.spades = [];
+		this.clubs = [];
+		this.hearts = [];
+		this.diamonds = [];
+		this.deal = false;
+		this.lead = false;
+		this.score = 0;
+		this.bid = 0;
+		this.books = 0;
+	}
 
-var west = new player ("Stinky Pete", 0),
-    north = new player ("Woody", 1),
-    east = new player ("Evil Emperor Zurg", 2),
-    south = new player ("Me", 3);
-document.getElementById("westHand").innerHTML = west.name;
-document.getElementById("northHand").innerHTML = north.name;
-document.getElementById("eastHand").innerHTML = east.name;
-
-function book (l) {
-	this.cardW = -1;	//card from the West player
-	this.cardN = -1;	//card from the North player
-	this.cardE = -1;	//card from the East player
-	this.cardS = -1;	//card from the South player
-	this.lead = l;	//Who lead (0-3 for W-S)
-}
-
-function hand () {
-	this.books = [];
-	this.nsBid = 0;
-	this.ewBid = 0;
-	this.nsScore = 0;
-	this.ewScore = 0;
-}
-//Skipping until later
-//    we let the user enter his name for the south player
-//document.getElementById("cardPileP").innerHTML = "Please enter you name.";
-//document.getElementById("cardPileNextP").innerHTML = <form><input type="text" name="name"><input type="submit" value="Submit"></form>
-//document.getElementById("")
-document.getElementById("southHand").innerHTML = south.name;
+	var west = new player ("Stinky Pete", 0),
+		north = new player ("Woody", 1),
+		east = new player ("Evil Emperor Zurg", 2),
+		south = new player ("Me", 3);
+	document.getElementById("westHand").innerHTML = west.name;
+	document.getElementById("northHand").innerHTML = north.name;
+	document.getElementById("eastHand").innerHTML = east.name;
 
 
-//    set any game variables and
-function gameStats (nsScore, ewScore, d, l) {
-    this.ns = nsScore;
-    this.ew = ewScore;
-    this.dealer = d;
-    this.leader = l;
-	this.hands = [];
-//    updateNS: function(){ns = ns + north.score + south.score;},
-//    updateEW: function(){ew = ew + east.score + west.score;}
-};
-var game = new gameStats(0, 0, 0, 0);
-//var dealer = 0; - added to gameStats with leader for passing by reference
-//var leader = 0;  don't need leader out here
-// check it worked - document.getElementById("northHand").innerHTML = "Game Score is NS=" + gameScore.ns + " EW=" + gameScore.ew;
-//    begin a round:
-document.getElementById("messages").innerHTML = "testing dealer is " + game.dealer + " and leader is " + game.leader + " before startRound."
-startRound(west, north, east, south, game);
-//document.getElementById("northHand").innerHTML = "Returned from startRound function."
-document.getElementById("messages").innerHTML = "Checking dealer: " + game.dealer + " and leader: " + game.leader + " after return from startRound function."
-/*        dealing:
-/*          distribute
-            sort
-            display
-/*        mark dealer and leader
-        take bids
-        1 - 13 books:
-            collect
-            evaluate
-            tally to player
-        compare score to bid
-        compute new scores
-        check for winner:
-            yes game
-            no next round  */
-            
-/*    display scores
-    congratulate winner
-    prompt play or quit
-*/
+	//Skipping until later
+	//    we let the user enter his name for the south player
+	//document.getElementById("cardPileP").innerHTML = "Please enter you name.";
+	//document.getElementById("cardPileNextP").innerHTML = <form><input type="text" name="name"><input type="submit" value="Submit"></form>
+	//document.getElementById("")
+	var tempName = window.prompt("Enter your name:");
+	south.name = (tempName) ? tempName : south.name;
+	document.getElementById("southHand").innerHTML = south.name;
+
+	function book (l) {
+		this.cardW = -1;	//card from the West player
+		this.cardN = -1;	//card from the North player
+		this.cardE = -1;	//card from the East player
+		this.cardS = -1;	//card from the South player
+		this.lead = l;	//Who lead (0-3 for W-S)
+	}
+
+	function round () {
+		this.books = [];
+		this.nsBid = 0;
+		this.ewBid = 0;
+		this.nsScore = 0;
+		this.ewScore = 0;
+	}
+
+	//    set any game variables and
+	function gameStats (nsScore, ewScore, d, l) {
+		this.ns = nsScore;
+		this.ew = ewScore;
+		this.dealer = d;
+		this.leader = l;
+		this.rounds = [];
+	//    updateNS: function(){ns = ns + north.score + south.score;},
+	//    updateEW: function(){ew = ew + east.score + west.score;}
+	};
+	var game = new gameStats(0, 0, 0, 0);
+	//var dealer = 0; - added to gameStats with leader for passing by reference
+	//var leader = 0;  don't need leader out here
+	// check it worked - document.getElementById("northHand").innerHTML = "Game Score is NS=" + gameScore.ns + " EW=" + gameScore.ew;
+	//    begin a round:
+	document.getElementById("messages").innerHTML = "testing dealer is " + game.dealer + " and leader is " + game.leader + " before startRound."
+	startRound(west, north, east, south, game);
+	//document.getElementById("northHand").innerHTML = "Returned from startRound function."
+	document.getElementById("messages").innerHTML = "Checking dealer: " + game.dealer + " and leader: " + game.leader + " after return from startRound function."
+	/*        dealing:
+	/*          distribute
+				sort
+				display
+	/*        mark dealer and leader
+			take bids
+			1 - 13 books:
+				collect
+				evaluate
+				tally to player
+			compare score to bid
+			compute new scores
+			check for winner:
+				yes game
+				no next round  */
+				
+	/*    display scores
+		congratulate winner
+		prompt play or quit
+	*/
 }  //end spadesMain
 
 function startRound (west, north, east, south, game) {
