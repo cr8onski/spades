@@ -11,7 +11,7 @@
     flow is initialize stuff, start game, play round, update game score, and 
     renew.
                                                                              */
-																			 
+
 /*  This is a test with Git to see what I can learn, and build some confidence */
 
 //to start we can offer two buttons - play or quit - taken care of in the html document
