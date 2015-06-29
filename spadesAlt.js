@@ -13,7 +13,7 @@
 																			 */
 
 /* Learning with github and the book http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
-one more thing  keeping everything happy */
+one more thing  keeping everything happy  made a change */
 
 //to start we can offer two buttons - play or quit - taken care of in the html document
 //upon quit we close the window and go home
