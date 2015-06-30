@@ -13,7 +13,7 @@
 																			 */
 
 /* Learning with github and the book http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
-one more thing  keeping everything happy   git made other changes  issue 53  
+one more thing  keeping everything happy  made a change  git made other changes  issue 53  
 hotfix fixed the broken email address  here is something else to consider  */
 
 //to start we can offer two buttons - play or quit - taken care of in the html document
